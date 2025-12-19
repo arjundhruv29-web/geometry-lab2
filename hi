@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Geometry Lab</title>
+
+<!-- Mobile support -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="glass">
+<h1>📐 Geometry Lab</h1>
+<nav>
+<button onclick="showSection('home')">Home</button>
+<button onclick="showSection('lessons')">Lessons</button>
+<button onclick="showSection('practice')">Practice</button>
+<button onclick="showSection('quiz')">Quiz</button>
+<button onclick="showSection('calculator')">Calculator</button>
+<button onclick="toggleDark()">🌙</button>
+</nav>
+</header>
+
+<main>
+
+<section id="home" class="glass section">
+<h2>Dashboard</h2>
+<p>Score: <span id="score">0</span></p>
+<p>Streak: <span id="streak">0</span></p>
+<progress id="progress" value="0" max="100"></progress>
+</section>
+
+<section id="lessons" class="glass section hidden">
+<h2>High School Geometry</h2>
+
+<h3>Parallel Lines & Transversals</h3>
+<p>Alternate interior angles are congruent.</p>
+
+<div class="diagram">
+<div class="line h1"></div>
+<div class="line h2"></div>
+<div class="line diag"></div>
+</div>
+
+<h3>Triangles</h3>
+<p>Interior angles of a triangle add up to 180°.</p>
+<div class="triangle"></div>
+
+<h3>Circles</h3>
+<p>A full circle measures 360°.</p>
+<div class="circle">
+<div class="radius"></div>
+</div>
+</section>
+
+<section id="practice" class="glass section hidden">
+<h2>Practice</h2>
+
+<label>Difficulty:</label>
+<select id="difficulty" onchange="nextQuestion()">
+<option>Easy</option>
+<option>Medium</option>
+<option>Hard</option>
+</select>
+
+<p id="question"></p>
+<input type="number" id="answer" placeholder="Your answer">
+<div class="button-row">
+<button onclick="checkPractice()">Check</button>
+<button onclick="showHint()">Hint</button>
+</div>
+
+<p id="feedback"></p>
+<p id="hint"></p>
+</section>
+
+<section id="quiz" class="glass section hidden">
+<h2>Quiz (No Hints)</h2>
+<p id="quizQ"></p>
+<div id="quizOptions" class="button-row"></div>
+<p id="quizResult"></p>
+</section>
+
+<section id="calculator" class="glass section hidden">
+<h2>Triangle Angle Calculator</h2>
+<input type="number" id="a" placeholder="Angle A">
+<input type="number" id="b" placeholder="Angle B">
+<button onclick="calcTriangle()">Calculate</button>
+<p id="calcResult"></p>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
